@@ -1,7 +1,7 @@
 fetch("input/01.txt")
   .then((res) => res.text())
   .then((text) => {
-     convertCodePartOne(text.split("\n"));
+    convertCodePartOne(text.split("\n"));
     convertCodePartTwo(text.split("\n"));
   })
   .catch((e) => console.error(e));
@@ -41,11 +41,9 @@ function convertCodePartTwo(giveMeData) {
     rightNumbers.push(line[1]);
   });
 
-  leftNumbers.forEach(value => {
-    const numberOfAppear = rightNumbers.filter(x => x == value).length;
+  leftNumbers.forEach((value) => {
+    const numberOfAppear = rightNumbers.filter((x) => x == value).length;
     result += value * numberOfAppear;
-    
-    })
-    console.log("Part two:" + result);
-    
+  });
+  console.log("Part two:" + result);
 }
